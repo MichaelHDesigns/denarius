@@ -19,8 +19,8 @@
 class CValidationState;
 
 #define BLOCK_START_FORTUNASTAKE_PAYMENTS_TESTNET 301 // Testnet Fortunastake payments enabled block 81k5
-#define BLOCK_START_FORTUNASTAKE_PAYMENTS 645000 //Mainnet Fortunastake payments not enabled until block 645k
-#define BLOCK_START_FORTUNASTAKE_DELAYPAY 1350000 //Unused
+#define BLOCK_START_FORTUNASTAKE_PAYMENTS 1000 //Mainnet Fortunastake payments not enabled until block 645k
+#define BLOCK_START_FORTUNASTAKE_DELAYPAY 500 //Unused
 
 //#define START_FORTUNASTAKE_PAYMENTS_TESTNET 1519430400  //Sat, 24 Feb 2018 00:00:00 GMT
 //#define START_FORTUNASTAKE_PAYMENTS 1520985600  //Wed, 14 Mar 2018 00:00:00 GMT
@@ -80,11 +80,11 @@ static const int64_t NAME_FEE = 1000000; // 0.01 D Name
 static const CAmount MIN_TXOUT_AMOUNT = NAME_FEE;
 static const int64_t MIN_TX_FEE_ANON = 10000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
-static const int64_t MAX_MONEY = 10000000 * COIN; // 10,000,000 D Denarius Max
-static const int64_t COIN_YEAR_REWARD = 0.06 * COIN; // 6% per year
+static const int64_t MAX_MONEY = 999999999999 * COIN; // 10,000,000 D Denarius Max
+static const int64_t COIN_YEAR_REWARD = 0.1 * COIN; // 6% per year
 
-static const int64_t MAINNET_POSFIX = 640000; //Mainnet Proof of Stake update not enabled until block 640k
-static const int MN_ENFORCEMENT_ACTIVE_HEIGHT = 1450000; // Enforce fortunastake payments after this height - BLOCK 1.45 Million
+static const int64_t MAINNET_POSFIX = 100; //Mainnet Proof of Stake update not enabled until block 640k
+static const int MN_ENFORCEMENT_ACTIVE_HEIGHT = 10; // Enforce fortunastake payments after this height - BLOCK 1.45 Million
 static const int MN_ENFORCEMENT_ACTIVE_HEIGHT_TESTNET = 1000; //Enforce FS payments after this height for Denarius Testnet!
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
