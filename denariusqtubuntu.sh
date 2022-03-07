@@ -28,12 +28,7 @@ echo -e "nativetor=0\naddnode=denarius.host\naddnode=denarius.win\naddnode=denar
 
 echo "Get Chaindata"
 cd ~/.denarius || exit
-rm -rf database txleveldb smsgDB
-#wget http://d.hashbag.cc/chaindata.zip
-#unzip chaindata.zip
-wget hhttps://denarii.cloud/chaindata.zip
-unzip chaindata.zip
-rm -rf chaindata.zip
+
 Echo "Back to Compiled QT Binary Folder"
 cd ~/denarius/src
                 ;;
@@ -87,12 +82,7 @@ echo -e "nativetor=0\naddnode=denarius.host\naddnode=denarius.win\naddnode=denar
 
 echo "Get Chaindata"
 cd ~/.denarius
-rm -rf database txleveldb smsgDB
-#wget http://d.hashbag.cc/chaindata.zip
-#unzip chaindata.zip
-wget https://denarii.cloud/chaindata.zip
-unzip chaindata.zip
-rm -rf chaindata.zip
+
 Echo "Back to Compiled QT Binary Folder"
 cd ~/denarius/src
                 ;;
