@@ -11,7 +11,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get --assume-yes install git unzip build-essential libssl-dev libdb++-dev libboost-all-dev libqrencode-dev libminiupnpc-dev libevent-dev obfs4proxy libcurl4-openssl-dev
 
 echo "Installing Denarius Wallet"
-git clone https://github.com/carsenk/denarius
+git clone https://github.com/MichaelHDesigns/denarius
 cd denarius || exit
 git checkout master
 git pull
@@ -71,7 +71,7 @@ cd ~
 openssl version -v
 
 echo "Installing Denarius Wallet"
-git clone https://github.com/carsenk/denarius
+git clone https://github.com/MichaelHDesigns/denarius
 cd denarius
 git checkout master
 git pull
