@@ -11,7 +11,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y git unzip build-essential libssl-dev libdb++-dev libboost-all-dev libqrencode-dev libminiupnpc-dev libevent-dev autogen automake  libtool libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools qt5-default libcurl4-openssl-dev
 
 echo "Installing Denarius Wallet"
-git clone https://github.com/carsenk/denarius
+git clone https://github.com/MichaelHDesigns/denarius
 cd denarius || exit
 git checkout master
 git pull
@@ -70,7 +70,7 @@ cd ~
 openssl version -v
 
 echo "Installing Denarius Wallet"
-git clone https://github.com/carsenk/denarius
+git clone https://github.com/MichaelHDesigns/denarius
 cd denarius
 git checkout master
 git pull
