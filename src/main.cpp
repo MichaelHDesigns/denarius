@@ -57,11 +57,11 @@ CBigNum bnProofOfWorkLimitTestNet(~uint256(0) >> 16);
 // Block Variables
 
 unsigned int nTargetSpacing     = 30;               // 30 seconds, FAST
-unsigned int nStakeMinAge       = 8 * 60 * 60;      // 8 hour min stake age
+unsigned int nStakeMinAge       = 1 * 60 * 60;      // 8 hour min stake age
 unsigned int nStakeMaxAge       = -1;               // unlimited
 unsigned int nModifierInterval  = 10 * 60;          // time to elapse before new modifier is computed
 int64_t nLastCoinStakeSearchTime = GetAdjustedTime();
-int nCoinbaseMaturity = 20; //30 on Mainnet D e n a r i u s, 30 for testnet
+int nCoinbaseMaturity = 6; //30 on Mainnet D e n a r i u s, 30 for testnet
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 bool FortunaReorgBlock = true;
@@ -1627,11 +1627,11 @@ void static PruneOrphanBlocks()
 // Proof of Work miner's coin base reward
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 {
-	int64_t nSubsidy = 1 * COIN;
+	int64_t nSubsidy = 5000 * COIN;
 
     if (fTestNet) {
         if (pindexBest->nHeight == 1)
-            nSubsidy = 3000000 * COIN;  // 3m D Premine for Testnet for testing and fund distribution
+            nSubsidy = 20000000 * COIN;  // 3m D Premine for Testnet for testing and fund distribution
         else if (pindexBest->nHeight <= FAIR_LAUNCH_BLOCK) // Block 210, Instamine prevention
             nSubsidy = 1 * COIN/2;
         else if (pindexBest->nHeight <= 4000)
@@ -1647,19 +1647,19 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
         return nSubsidy + nFees;
     } else {
         if (pindexBest->nHeight == 1)
-            nSubsidy = 1000000 * COIN;  // 10% Premine
+            nSubsidy = 20000000 * COIN;  // 10% Premine
         else if (pindexBest->nHeight <= FAIR_LAUNCH_BLOCK) // Block 210, Instamine prevention
-            nSubsidy = 1 * COIN/2;
+            nSubsidy = 5000;
         else if (pindexBest->nHeight <= 1000000) // Block 1m ~ 3m D (33% will go to hybrid fortunastakes)
-            nSubsidy = 3 * COIN;
+            nSubsidy = 2500 * COIN;
         else if (pindexBest->nHeight <= 2000000) // Block 2m ~ 4m D
-            nSubsidy = 4 * COIN;
+            nSubsidy = 2000 * COIN;
         else if (pindexBest->nHeight <= 3000000) // Block 3m ~ 3m D
-            nSubsidy = 3 * COIN;
+            nSubsidy = 1500 * COIN;
         else if (pindexBest->nHeight > ZERO_POW_BLOCK && pindexBest->nHeight < 4693333) // Block 3m
-            nSubsidy = 0; // PoW Reward 
+            nSubsidy = 1000; // PoW Reward 
         else if (pindexBest->nHeight >= 4693333) // Block 4693333, Start PoW Rewards again as 0.0001 D per block, Less than ~100 D per year to prevent unspendable UTXOs
-            nSubsidy = 10000; // PoW Reward 0.0001 D
+            nSubsidy = 5000; // PoW Reward 0.0001 D
 
         if (fDebug && GetBoolArg("-printcreation"))
             printf("GetProofOfWorkReward() : create=%s nSubsidy=%" PRId64"\n", FormatMoney(nSubsidy).c_str(), nSubsidy);
