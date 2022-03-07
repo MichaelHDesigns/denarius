@@ -61,7 +61,7 @@ unsigned int nStakeMinAge       = 1 * 60 * 60;      // 8 hour min stake age
 unsigned int nStakeMaxAge       = -1;               // unlimited
 unsigned int nModifierInterval  = 10 * 60;          // time to elapse before new modifier is computed
 int64_t nLastCoinStakeSearchTime = GetAdjustedTime();
-int nCoinbaseMaturity = 6; //30 on Mainnet D e n a r i u s, 30 for testnet
+int nCoinbaseMaturity = 1; //30 on Mainnet D e n a r i u s, 30 for testnet
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 bool FortunaReorgBlock = true;
@@ -1389,7 +1389,7 @@ int CMerkleTx::GetBlocksToMaturity() const
 {
     if (!(IsCoinBase() || IsCoinStake()))
         return 0;
-    return max(0, (nCoinbaseMaturity+10) - GetDepthInMainChain());
+    return max(0, (nCoinbaseMaturity+5) - GetDepthInMainChain());
 }
 
 
