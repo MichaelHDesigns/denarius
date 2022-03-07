@@ -29,10 +29,7 @@ echo -e "daemon=1\listen=1\rpcuser=user\rpcpassword=changethispassword\nativetor
 
 echo "Get Chaindata"
 cd ~/.denarius || exit
-rm -rf database txleveldb smsgDB
-wget https://gitlab.com/denarius/chain/raw/master/chaindata2290877.zip
-unzip chaindata2290877.zip
-rm -rf chaindata2290877.zip
+
 echo "Back to Compiled denariusd Binary Folder"
 cd ~/denarius/src
                 ;;
@@ -89,10 +86,7 @@ echo -e "daemon=1\listen=1\rpcuser=user\rpcpassword=changethispassword\nativetor
 
 echo "Get Chaindata"
 cd ~/.denarius
-rm -rf database txleveldb smsgDB
-wget https://gitlab.com/denarius/chain/raw/master/chaindata2290877.zip
-unzip chaindata2290877.zip
-rm -rf chaindata2290877.zip
+
 echo "Back to Compiled denariusd Binary Folder"
 cd ~/denarius/src
                 ;;
